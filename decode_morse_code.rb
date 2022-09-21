@@ -1,7 +1,7 @@
 # First we create a global variable to store the morse codes
 @morse_dict = { '.-' => 'A', '-...' => 'B', '---' => 'O', '-..-' => 'X', '..-.' => 'F', '..-' => 'U', '.-..' => 'L', '.-.' => 'R',  '..' => 'I', '.' => 'E', '...' => 'S' }
 # We will first check if the letters are getting via the function call
-def get_singleLetter(letter)
+def get_single_letter(letter)
   @singleLetter = @morse_dict[letter]
   @singleLetter
 end
@@ -10,15 +10,15 @@ def decode_theword(word)
   @letters = word.split
   @currentword = ''
   @letters.each do |letter|
-    @currentword += get_singleLetter(letter)
+    @currentword += get_single_letter(letter)
   end
   print "#{@currentword} "
 end
 # We create another function to make all the words come together to make a single sentence
-def decode_finalMessage(message)
+def decode_final_message(message)
   @words = message.split('   ')
   @words.each do |word|
     decode_theword(word)
   end
 end
-decode_finalMessage('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+decode_final_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
